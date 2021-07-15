@@ -8,23 +8,27 @@
 
 import UIKit
 
-class TeamInfoViewController: UIViewController {
-
-    override func viewDidLoad() {
+class TeamInfoViewController: UIViewController
+{
+    // MARK:- Properties
+    
+    private let team: TeamViewModel
+    
+    init(team: TeamViewModel)
+    {
+        self.team = team
+        super.init(nibName: Self.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder)
+    {
+        fatalError("use init(teamID: Int)")
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        title = team.name
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

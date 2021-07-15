@@ -8,23 +8,112 @@
 
 import UIKit
 
-class LeagueTeamsViewController: UIViewController {
-
-    override func viewDidLoad() {
+class LeagueTeamsViewController: UIViewController
+{
+    // MARK:- Outlets
+    
+    @IBOutlet weak var teamsTableView: UITableView!
+    
+    // MARK:- Properties
+    
+    var presenter: LeagueTeamsViewToPresenterProtocol?
+    private let season: Int
+    
+    // MARK:- init
+    
+    init(season: Int)
+    {
+        self.season = season
+        super.init(nibName: Self.identifier, bundle: nil)
+        setupComponants()
+    }
+    
+    required init?(coder: NSCoder)
+    {
+        fatalError("use init(season: Int)")
+    }
+    
+    // MARK:- Life Cycel
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
+        getPremierLeagueTeamsForCurrentSeason()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK:- Setup
+    
+    private func setupComponants()
+    {
+        let presenter = LeagueTeamsPresenter()
+        let interactor = LeagueTeamsInteractor()
+        let router = FootballLeagueRouter(self)
+        
+        presenter.view = self
+        presenter.interactor = interactor
+        presenter.router = router
+        interactor.presenter = presenter
+        self.presenter = presenter
     }
-    */
+    
+    private func setup()
+    {
+        setupTeamsTableView()
+    }
+    
+    private func setupTeamsTableView()
+    {
+        teamsTableView.register(nib: TeamTableViewCell.self)
+        teamsTableView.tableFooterView = UIView()
+    }
+    
+    // MARK:- Methods
+    
+    private func getPremierLeagueTeamsForCurrentSeason()
+    {
+        presenter?.getPremierLeagueTeams(for: season)
+    }
+    
+    private func display(dataSource: TeamsListDataSource)
+    {
+        dataSource.delegate = self
+        teamsTableView.dataSource = dataSource
+        teamsTableView.delegate = dataSource
+        teamsTableView.reloadData()
+    }
+    
+    private func display(competition: CompetitionViewModel)
+    {
+        title = competition.name
+    }
+}
 
+// MARK:- Presenter ~> View
+
+extension LeagueTeamsViewController: LeagueTeamsPresenterToViewProtocol
+{
+    func display(teams dataSource: TeamsListDataSource, in competition: CompetitionViewModel)
+    {
+        display(dataSource: dataSource)
+        display(competition: competition)
+    }
+    
+    func display(error message: Alert)
+    {
+        showAlert(.app, message)
+    }
+}
+
+// MARK:- DataSourceDelegate
+
+extension LeagueTeamsViewController: DataSourceDelegate
+{
+    func didSelect(_ item: Any?, at indexPath: IndexPath)
+    {
+        guard let team = item as? TeamViewModel else { return }
+        
+        teamsTableView.deselectRow(at: indexPath, animated: true)
+        presenter?.navigateToTeamInfo(with: team)
+    }
 }

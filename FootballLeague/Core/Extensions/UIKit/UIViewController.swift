@@ -10,6 +10,8 @@ import UIKit
 
 extension UIViewController
 {
+    static var identifier: String { "\(Self.self)" }
+    
     static var topViewController: UIViewController?
     {
         if var topController = UIApplication.keyWindow.rootViewController

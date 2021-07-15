@@ -1,5 +1,5 @@
 //
-//  FootballLeagueManager.swift
+//  FootballLeagueNetworkManager.swift
 //  FootballLeague
 //
 //  Created by Mohamed Shemy on Thu 15 Jul 2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FootballLeagueManager: FootballLeagueNetworable
+class FootballLeagueNetworkManager: FootballLeagueNetworable
 {
     // MARK:- Properties
     

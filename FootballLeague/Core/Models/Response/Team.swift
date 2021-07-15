@@ -21,6 +21,7 @@ struct Team: Codable
     var viewModel: TeamViewModel?
     {
         guard let id = id,
+              let name = name,
               let crestUrl = crestUrl,
               let website = website
         else { return nil }
@@ -34,6 +35,6 @@ struct Team: Codable
 struct TeamViewModel
 {
     let id: Int
-    let name, crestUrl, website: String?
+    let name, crestUrl, website: String
     let squad: [PlayerViewModel]
 }
