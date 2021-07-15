@@ -15,7 +15,7 @@ extension BaseAPIParametersProtocol
     var baseDomain: String { "https://api.football-data.org/v2/" }
     var baseURL: URL { URL(string: baseDomain)! }
     
-    var headers: [String: String]
+    var headers: [String: String]?
     {
         [
             "Content-type": "application/json",
