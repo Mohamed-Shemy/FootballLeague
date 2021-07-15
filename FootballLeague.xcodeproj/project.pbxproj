@@ -15,6 +15,13 @@
 		D9CAF601269F52E500BDEE4C /* LeagueTeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAF5FF269F52E500BDEE4C /* LeagueTeamsViewController.xib */; };
 		D9CAF604269F530400BDEE4C /* TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF602269F530400BDEE4C /* TeamInfoViewController.swift */; };
 		D9CAF605269F530400BDEE4C /* TeamInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAF603269F530400BDEE4C /* TeamInfoViewController.xib */; };
+		D9CAF610269F701900BDEE4C /* MoyaServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF60F269F701900BDEE4C /* MoyaServiceHelper.swift */; };
+		D9CAF612269F704100BDEE4C /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF611269F704100BDEE4C /* ServiceType.swift */; };
+		D9CAF617269FBBA300BDEE4C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF616269FBBA300BDEE4C /* ActivityIndicator.swift */; };
+		D9CAF61B269FBBDE00BDEE4C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF61A269FBBDE00BDEE4C /* UIViewController.swift */; };
+		D9CAF61D269FBC4600BDEE4C /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF61C269FBC4600BDEE4C /* UIApplication.swift */; };
+		D9CAF61F269FBCF500BDEE4C /* UIViewController + NVActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF61E269FBCF500BDEE4C /* UIViewController + NVActivityIndicator.swift */; };
+		D9CAF622269FBE2B00BDEE4C /* BaseAPIParametersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF621269FBE2B00BDEE4C /* BaseAPIParametersProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		D9CAF5FF269F52E500BDEE4C /* LeagueTeamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTeamsViewController.xib; sourceTree = "<group>"; };
 		D9CAF602269F530400BDEE4C /* TeamInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewController.swift; sourceTree = "<group>"; };
 		D9CAF603269F530400BDEE4C /* TeamInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamInfoViewController.xib; sourceTree = "<group>"; };
+		D9CAF60F269F701900BDEE4C /* MoyaServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaServiceHelper.swift; sourceTree = "<group>"; };
+		D9CAF611269F704100BDEE4C /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		D9CAF616269FBBA300BDEE4C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		D9CAF61A269FBBDE00BDEE4C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D9CAF61C269FBC4600BDEE4C /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		D9CAF61E269FBCF500BDEE4C /* UIViewController + NVActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + NVActivityIndicator.swift"; sourceTree = "<group>"; };
+		D9CAF621269FBE2B00BDEE4C /* BaseAPIParametersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIParametersProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,8 @@
 				D9CAF5F9269F518F00BDEE4C /* App */,
 				D9CAF5FD269F526B00BDEE4C /* Configuration */,
 				D9CAF5FC269F524D00BDEE4C /* Resources */,
+				D9CAF60C269F6F8900BDEE4C /* Services */,
+				D9CAF613269FBB7B00BDEE4C /* Core */,
 				D9CAF5FA269F523D00BDEE4C /* Screens */,
 				D9CAF606269F530E00BDEE4C /* Modules */,
 			);
@@ -172,6 +188,83 @@
 			children = (
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		D9CAF60C269F6F8900BDEE4C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF60D269F6FA200BDEE4C /* Remote */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D9CAF60D269F6FA200BDEE4C /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF620269FBD6E00BDEE4C /* Modules */,
+				D9CAF60E269F6FB100BDEE4C /* Base */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D9CAF60E269F6FB100BDEE4C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF611269F704100BDEE4C /* ServiceType.swift */,
+				D9CAF60F269F701900BDEE4C /* MoyaServiceHelper.swift */,
+				D9CAF621269FBE2B00BDEE4C /* BaseAPIParametersProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D9CAF613269FBB7B00BDEE4C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF618269FBBC500BDEE4C /* Extensions */,
+				D9CAF614269FBB8100BDEE4C /* Reusable UI */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D9CAF614269FBB8100BDEE4C /* Reusable UI */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF615269FBB9600BDEE4C /* Views */,
+			);
+			path = "Reusable UI";
+			sourceTree = "<group>";
+		};
+		D9CAF615269FBB9600BDEE4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF616269FBBA300BDEE4C /* ActivityIndicator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9CAF618269FBBC500BDEE4C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF619269FBBCD00BDEE4C /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D9CAF619269FBBCD00BDEE4C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF61A269FBBDE00BDEE4C /* UIViewController.swift */,
+				D9CAF61E269FBCF500BDEE4C /* UIViewController + NVActivityIndicator.swift */,
+				D9CAF61C269FBC4600BDEE4C /* UIApplication.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		D9CAF620269FBD6E00BDEE4C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,9 +383,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CAF61D269FBC4600BDEE4C /* UIApplication.swift in Sources */,
+				D9CAF61B269FBBDE00BDEE4C /* UIViewController.swift in Sources */,
+				D9CAF612269F704100BDEE4C /* ServiceType.swift in Sources */,
 				D9CAF600269F52E500BDEE4C /* LeagueTeamsViewController.swift in Sources */,
+				D9CAF610269F701900BDEE4C /* MoyaServiceHelper.swift in Sources */,
 				D9CAF604269F530400BDEE4C /* TeamInfoViewController.swift in Sources */,
+				D9CAF617269FBBA300BDEE4C /* ActivityIndicator.swift in Sources */,
 				D9CAF5E6269F4CE800BDEE4C /* AppDelegate.swift in Sources */,
+				D9CAF61F269FBCF500BDEE4C /* UIViewController + NVActivityIndicator.swift in Sources */,
+				D9CAF622269FBE2B00BDEE4C /* BaseAPIParametersProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

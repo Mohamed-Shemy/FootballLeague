@@ -8,5 +8,7 @@ target 'FootballLeague' do
   # Pods for FootballLeague
   pod 'Moya'
   pod 'Kingfisher'
+  
+  pod 'NVActivityIndicatorView', :git => 'https://github.com/ninjaprox/NVActivityIndicatorView.git', :tag => '4.8.0'
 
 end
