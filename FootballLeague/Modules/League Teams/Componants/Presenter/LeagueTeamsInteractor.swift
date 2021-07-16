@@ -11,7 +11,7 @@ import Foundation
 class LeagueTeamsInteractor: LeagueTeamsPresenterToInteractorProtocol
 {
     // MARK:- Properties
-    var presenter: LeagueTeamsInteractorToPresenterProtocol?
+    weak var presenter: LeagueTeamsInteractorToPresenterProtocol?
     private var networkManager: FootballLeagueNetworable
     
     // MARK:- init

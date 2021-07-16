@@ -11,8 +11,9 @@ import UIKit
 public protocol Navigator: AnyObject
 {
     associatedtype Destination: Navigatable
+    associatedtype Controller: UIViewController
     
-    var viewController: UIViewController? { get }
+    var viewController: Controller? { get }
     
     func dismiss()
     func navigate(to destination: Destination)
@@ -34,5 +35,18 @@ public extension Navigator
     func present(_ controller: Destination)
     {
         viewController?.present(navigatable: controller)
+    }
+}
+
+public extension Navigator where Controller == UINavigationController
+{
+    func navigate(to destination: Destination)
+    {
+        guard viewController?.navigationController != nil else {
+            viewController?.pushViewController(destination.viewController, animated: true)
+            return
+        }
+        
+        viewController?.push(navigatable: destination)
     }
 }

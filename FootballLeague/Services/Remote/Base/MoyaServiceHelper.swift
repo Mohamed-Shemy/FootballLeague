@@ -23,10 +23,8 @@ class MoyaServiceHelper<T: TargetType>
          
         let networkActivityClosure: NetworkActivityPlugin.NetworkActivityClosure = Self.networkActivityAction
         let networkActivityPlugin = NetworkActivityPlugin(networkActivityClosure: networkActivityClosure)
-        let networkLogger = NetworkLoggerPlugin()
         
         plugins.append(networkActivityPlugin)
-        plugins.append(networkLogger)
         
         let serviceType = type == .live ? MoyaProvider<T>.neverStub : MoyaProvider<T>.immediatelyStub
         

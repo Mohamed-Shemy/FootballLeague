@@ -6,7 +6,7 @@
 //  Copyright © 2021 Mohamed Shemy. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // MARK:- Presenter ~> View (View)
 

@@ -11,6 +11,7 @@ import UIKit
 typealias ConfigurableTableViewCell = UITableViewCell & Configurable
 
 typealias TeamsListDataSource = TableViewDataSource<TeamViewModel, TeamTableViewCell>
+typealias PLayersDataSource = TableViewDataSource<PlayerViewModel, PlayerTableViewCell>
 
 class TableViewDataSource<Model, Cell: ConfigurableTableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate
 where Cell.Model == Model

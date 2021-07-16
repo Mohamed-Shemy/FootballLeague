@@ -15,6 +15,7 @@ enum Alert
     case unkown(String)
     
     case unableToLoadTeams
+    case unableToLoadTeamInfo
     
     // MARK:- Values
     
@@ -23,7 +24,8 @@ enum Alert
         switch self
         {
             case let .unkown(message): return message
-            case .unableToLoadTeams: return "Unable to laod teams for the season"
+            case .unableToLoadTeams: return "Unable to laod teams for the season."
+            case .unableToLoadTeamInfo: return "Unable to load team info."
         }
     }
 }

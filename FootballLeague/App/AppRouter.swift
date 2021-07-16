@@ -13,30 +13,32 @@ class AppRouter
     // MARK:- Properties
     
     private var window: UIWindow
+    private var router: FootballLeagueNavigationRouter
+    private var navigationController: UINavigationController
     
     // MARK:- init
     
     init(_ window: UIWindow? = nil)
     {
         self.window = window ?? UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController()
+        self.navigationController = navigationController
+        router = .init(navigationController)
+        setNavigationControllerStyle()
+        setRoot(navigationController)
     }
     
     // MARK:- Methods
     
-    func displayFirstScreen(withNavigation: Bool = true)
+    private func setNavigationControllerStyle()
     {
-        var viewController: UIViewController
+        navigationController.navigationBar.prefersLargeTitles = true
+    }
+    
+    func launchFirstScreen()
+    {
         let currentSeason = Date().year
-        
-        if withNavigation
-        {
-            viewController = UINavigationController(rootViewController: LeagueTeamsViewController(season: currentSeason))
-        }
-        else
-        {
-            viewController = LeagueTeamsViewController(season: currentSeason)
-        }
-        setRoot(viewController)
+        router.navigate(to: .leagueTeams(currentSeason))
     }
     
     // MARK:- Helpers

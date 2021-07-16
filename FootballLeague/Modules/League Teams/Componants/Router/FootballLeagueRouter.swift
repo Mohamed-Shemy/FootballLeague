@@ -8,7 +8,8 @@
 
 import UIKit
 
-typealias FootballLeagueRouter = Router<FootballLeagueNavigator>
+typealias FootballLeagueRouter = Router<FootballLeagueNavigator, UIViewController>
+typealias FootballLeagueNavigationRouter = Router<FootballLeagueNavigator, UINavigationController>
 
 enum FootballLeagueNavigator: Navigatable
 {

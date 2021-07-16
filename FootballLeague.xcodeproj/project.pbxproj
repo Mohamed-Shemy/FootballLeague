@@ -55,6 +55,10 @@
 		D9CAF67626A0C47D00BDEE4C /* UIViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF67526A0C47D00BDEE4C /* UIViewController + Alert.swift */; };
 		D9CAF67826A0C62900BDEE4C /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF67726A0C62900BDEE4C /* AppRouter.swift */; };
 		D9CAF67B26A0CB3E00BDEE4C /* SVGImgProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF67A26A0CB3E00BDEE4C /* SVGImgProcessor.swift */; };
+		D9CAF68226A18D1700BDEE4C /* TeamInfoVIPERProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF68126A18D1700BDEE4C /* TeamInfoVIPERProtocols.swift */; };
+		D9CAF68426A18E4600BDEE4C /* TeamInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF68326A18E4600BDEE4C /* TeamInfoInteractor.swift */; };
+		D9CAF68626A18E5900BDEE4C /* TeamInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF68526A18E5900BDEE4C /* TeamInfoPresenter.swift */; };
+		D9CAF68826A1C79000BDEE4C /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAF68726A1C79000BDEE4C /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +114,10 @@
 		D9CAF67526A0C47D00BDEE4C /* UIViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert.swift"; sourceTree = "<group>"; };
 		D9CAF67726A0C62900BDEE4C /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		D9CAF67A26A0CB3E00BDEE4C /* SVGImgProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImgProcessor.swift; sourceTree = "<group>"; };
+		D9CAF68126A18D1700BDEE4C /* TeamInfoVIPERProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoVIPERProtocols.swift; sourceTree = "<group>"; };
+		D9CAF68326A18E4600BDEE4C /* TeamInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoInteractor.swift; sourceTree = "<group>"; };
+		D9CAF68526A18E5900BDEE4C /* TeamInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamInfoPresenter.swift; path = "FootballLeague/Modules/Team Info/Componants/Interactor/TeamInfoPresenter.swift"; sourceTree = SOURCE_ROOT; };
+		D9CAF68726A1C79000BDEE4C /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +246,8 @@
 		D9CAF609269F534300BDEE4C /* Team Info */ = {
 			isa = PBXGroup;
 			children = (
+				D9CAF67C26A18C0E00BDEE4C /* Componants */,
+				D9CAF67D26A18CCC00BDEE4C /* View */,
 				D9CAF60A269F534900BDEE4C /* Controller */,
 			);
 			path = "Team Info";
@@ -494,6 +504,48 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D9CAF67C26A18C0E00BDEE4C /* Componants */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF68026A18CF500BDEE4C /* Presenter */,
+				D9CAF67F26A18CEC00BDEE4C /* Interactor */,
+				D9CAF67E26A18CE200BDEE4C /* Protocol */,
+			);
+			path = Componants;
+			sourceTree = "<group>";
+		};
+		D9CAF67D26A18CCC00BDEE4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF68726A1C79000BDEE4C /* PlayerTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9CAF67E26A18CE200BDEE4C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF68126A18D1700BDEE4C /* TeamInfoVIPERProtocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D9CAF67F26A18CEC00BDEE4C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF68326A18E4600BDEE4C /* TeamInfoInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D9CAF68026A18CF500BDEE4C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9CAF68526A18E5900BDEE4C /* TeamInfoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -620,6 +672,7 @@
 				D9CAF64D26A093DC00BDEE4C /* FootballLeagueRouter.swift in Sources */,
 				D9CAF61D269FBC4600BDEE4C /* UIApplication.swift in Sources */,
 				D9CAF64826A0924000BDEE4C /* Navigator.swift in Sources */,
+				D9CAF68426A18E4600BDEE4C /* TeamInfoInteractor.swift in Sources */,
 				D9CAF66926A0AA9F00BDEE4C /* AppTitle.swift in Sources */,
 				D9CAF627269FC43400BDEE4C /* FootballLeagueNetworable.swift in Sources */,
 				D9CAF66326A0A99E00BDEE4C /* TeamTableViewCell.swift in Sources */,
@@ -633,11 +686,14 @@
 				D9CAF67B26A0CB3E00BDEE4C /* SVGImgProcessor.swift in Sources */,
 				D9CAF610269F701900BDEE4C /* MoyaServiceHelper.swift in Sources */,
 				D9CAF66726A0AA7500BDEE4C /* AppAlerts.swift in Sources */,
+				D9CAF68626A18E5900BDEE4C /* TeamInfoPresenter.swift in Sources */,
 				D9CAF65D26A0996100BDEE4C /* UIView.swift in Sources */,
 				D9CAF65B26A098AB00BDEE4C /* UITableView.swift in Sources */,
 				D9CAF66D26A0AC9900BDEE4C /* LeagueTeamsInteractor.swift in Sources */,
 				D9CAF63926A06F7C00BDEE4C /* CompetitionTeamsResponse.swift in Sources */,
+				D9CAF68226A18D1700BDEE4C /* TeamInfoVIPERProtocols.swift in Sources */,
 				D9CAF65626A0978A00BDEE4C /* DataSourceDelegate.swift in Sources */,
+				D9CAF68826A1C79000BDEE4C /* PlayerTableViewCell.swift in Sources */,
 				D9CAF62D269FC52600BDEE4C /* Area.swift in Sources */,
 				D9CAF64726A0924000BDEE4C /* Navigatable.swift in Sources */,
 				D9CAF65F26A09AFC00BDEE4C /* UIView + Animation.swift in Sources */,

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class Router<Destination: Navigatable>: Navigator
+class Router<Destination: Navigatable, Controller: UIViewController>: Navigator
 {
     // MARK: Properties
     
-    weak var viewController: UIViewController?
+    weak var viewController: Controller?
     
     // MARK: init
     
-    init(_ view: UIViewController?)
+    init(_ view: Controller?)
     {
         viewController = view
     }
